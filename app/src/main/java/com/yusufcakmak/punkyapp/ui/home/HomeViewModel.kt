@@ -3,11 +3,38 @@ package com.yusufcakmak.punkyapp.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.yusufcakmak.punkyapp.common.doOnStatusChanged
+import com.yusufcakmak.punkyapp.common.doOnSuccess
+import com.yusufcakmak.punkyapp.domain.Beer
+import com.yusufcakmak.punkyapp.domain.FetchBeerUseCase
+import com.yusufcakmak.punkyapp.ui.base.StatusViewState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.launchIn
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val fetchBeerUseCase: FetchBeerUseCase
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val contents = MutableLiveData<List<Beer>>()
+    val contents_: LiveData<List<Beer>> = contents
+
+    private val status = MutableLiveData<StatusViewState>()
+    val status_: LiveData<StatusViewState> = status
+
+
+    fun fetchBeers() {
+        fetchBeerUseCase
+            .fetchBeers()
+            .doOnSuccess { data ->
+                contents.value = data
+            }
+            .doOnStatusChanged {
+                status.value = StatusViewState(status = it)
+            }
+            .launchIn(viewModelScope)
     }
-    val text: LiveData<String> = _text
+
 }
