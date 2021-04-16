@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.ui.splash
+package com.yusufcakmak.punkyapp.presentation.splash
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.yusufcakmak.punkyapp.R
 import com.yusufcakmak.punkyapp.databinding.FragmentSplashBinding
-import com.yusufcakmak.punkyapp.ui.base.BaseFragment
+import com.yusufcakmak.punkyapp.presentation.base.BaseFragment
 import kotlinx.coroutines.delay
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>() {

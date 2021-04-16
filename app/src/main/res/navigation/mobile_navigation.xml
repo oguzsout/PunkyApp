@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.yusufcakmak.punkyapp.ui.home.HomeFragment"
+        android:name="com.yusufcakmak.punkyapp.presentation.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_splash"
-        android:name="com.yusufcakmak.punkyapp.ui.splash.SplashFragment"
+        android:name="com.yusufcakmak.punkyapp.presentation.splash.SplashFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.yusufcakmak.punkyapp.ui.detail.DetailFragment"
+        android:name="com.yusufcakmak.punkyapp.presentation.detail.DetailFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_detail" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.ui.base
+package com.yusufcakmak.punkyapp.presentation.base
 
 import com.yusufcakmak.punkyapp.common.Status
 

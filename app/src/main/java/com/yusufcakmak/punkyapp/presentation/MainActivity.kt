@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.ui
+package com.yusufcakmak.punkyapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

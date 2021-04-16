@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.ui.detail
+package com.yusufcakmak.punkyapp.presentation.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,10 +1,10 @@
-package com.yusufcakmak.punkyapp.ui.detail
+package com.yusufcakmak.punkyapp.presentation.detail
 
 import android.os.Bundle
 import android.view.View
 import com.yusufcakmak.punkyapp.R
 import com.yusufcakmak.punkyapp.databinding.FragmentDetailBinding
-import com.yusufcakmak.punkyapp.ui.base.BaseFragment
+import com.yusufcakmak.punkyapp.presentation.base.BaseFragment
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>() {
 

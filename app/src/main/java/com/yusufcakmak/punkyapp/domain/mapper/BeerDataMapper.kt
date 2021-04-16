@@ -10,7 +10,9 @@ class BeerDataMapper @Inject constructor() : Mapper<BeerResponse, Beer> {
     override fun map(resp: BeerResponse): Beer {
         return Beer(
             id = resp.id,
-            name = resp.name
+            name = resp.name,
+            imageUrl = resp.imageUrl,
+            tagline = resp.tagline
         )
     }
 }

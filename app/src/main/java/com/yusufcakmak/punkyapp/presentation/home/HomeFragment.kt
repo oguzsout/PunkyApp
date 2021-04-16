@@ -1,18 +1,13 @@
-package com.yusufcakmak.punkyapp.ui.home
+package com.yusufcakmak.punkyapp.presentation.home
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import com.squareup.picasso.Picasso
 import com.yusufcakmak.punkyapp.R
 import com.yusufcakmak.punkyapp.databinding.FragmentHomeBinding
-import com.yusufcakmak.punkyapp.ui.base.BaseFragment
+import com.yusufcakmak.punkyapp.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,6 +24,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         homeViewModel.contents_.observe(viewLifecycleOwner, {
             Log.v("TEST4", "list " + it[0].name)
+            Picasso.get().load(it[0].imageUrl).into(binding.ivBeerImage)
+            binding.tvBeerName.text = it[0].name
+            binding.tvTagLine.text = it[0].tagline
         })
+
+        binding.tvRandomBeer.setOnClickListener {
+            homeViewModel.fetchBeers()
+        }
+
     }
 }
