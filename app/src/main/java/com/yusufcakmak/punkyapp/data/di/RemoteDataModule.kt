@@ -1,9 +1,10 @@
-package com.yusufcakmak.punkyapp.data
+package com.yusufcakmak.punkyapp.data.di
 
 import com.yusufcakmak.punkyapp.BuildConfig
-import com.yusufcakmak.punkyapp.common.Mapper
-import com.yusufcakmak.punkyapp.domain.Beer
-import com.yusufcakmak.punkyapp.domain.BeerDataMapper
+import com.yusufcakmak.punkyapp.data.IoDispatcher
+import com.yusufcakmak.punkyapp.data.remote.RemoteBeerDataSource
+import com.yusufcakmak.punkyapp.data.remote.RemoteDataSourceImpl
+import com.yusufcakmak.punkyapp.data.api.BeerService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

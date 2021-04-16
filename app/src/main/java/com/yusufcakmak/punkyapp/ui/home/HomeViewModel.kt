@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yusufcakmak.punkyapp.common.doOnStatusChanged
 import com.yusufcakmak.punkyapp.common.doOnSuccess
-import com.yusufcakmak.punkyapp.domain.Beer
-import com.yusufcakmak.punkyapp.domain.FetchBeerUseCase
+import com.yusufcakmak.punkyapp.domain.model.Beer
+import com.yusufcakmak.punkyapp.domain.usecase.FetchBeerUseCase
 import com.yusufcakmak.punkyapp.ui.base.StatusViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

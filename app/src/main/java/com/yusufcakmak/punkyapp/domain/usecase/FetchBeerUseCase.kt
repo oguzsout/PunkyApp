@@ -1,9 +1,10 @@
-package com.yusufcakmak.punkyapp.domain
+package com.yusufcakmak.punkyapp.domain.usecase
 
 import com.yusufcakmak.punkyapp.common.Mapper
 import com.yusufcakmak.punkyapp.common.Resource
-import com.yusufcakmak.punkyapp.data.BeerResponse
+import com.yusufcakmak.punkyapp.data.model.BeerResponse
 import com.yusufcakmak.punkyapp.data.IoDispatcher
+import com.yusufcakmak.punkyapp.domain.model.Beer
 import com.yusufcakmak.punkyapp.repository.BeerRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.catch

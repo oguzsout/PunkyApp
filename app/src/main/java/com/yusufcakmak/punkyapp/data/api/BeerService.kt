@@ -1,5 +1,6 @@
-package com.yusufcakmak.punkyapp.data
+package com.yusufcakmak.punkyapp.data.api
 
+import com.yusufcakmak.punkyapp.data.model.BeerResponse
 import retrofit2.http.GET
 
 interface BeerService {

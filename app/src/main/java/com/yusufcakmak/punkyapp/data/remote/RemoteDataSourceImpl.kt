@@ -1,5 +1,8 @@
-package com.yusufcakmak.punkyapp.data
+package com.yusufcakmak.punkyapp.data.remote
 
+import com.yusufcakmak.punkyapp.data.IoDispatcher
+import com.yusufcakmak.punkyapp.data.api.BeerService
+import com.yusufcakmak.punkyapp.data.model.BeerResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

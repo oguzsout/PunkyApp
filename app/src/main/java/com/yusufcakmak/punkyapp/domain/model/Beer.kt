@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.domain
+package com.yusufcakmak.punkyapp.domain.model
 
 data class Beer(
     val id: Int,

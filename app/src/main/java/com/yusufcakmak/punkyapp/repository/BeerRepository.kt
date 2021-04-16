@@ -1,6 +1,6 @@
 package com.yusufcakmak.punkyapp.repository
 
-import com.yusufcakmak.punkyapp.data.RemoteBeerDataSource
+import com.yusufcakmak.punkyapp.data.remote.RemoteBeerDataSource
 import javax.inject.Inject
 
 class BeerRepository @Inject constructor(

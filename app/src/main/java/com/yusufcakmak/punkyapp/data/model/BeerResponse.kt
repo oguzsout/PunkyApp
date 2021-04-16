@@ -1,4 +1,4 @@
-package com.yusufcakmak.punkyapp.data
+package com.yusufcakmak.punkyapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
