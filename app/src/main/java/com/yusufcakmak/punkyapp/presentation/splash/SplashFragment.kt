@@ -8,6 +8,7 @@ import com.yusufcakmak.punkyapp.R
 import com.yusufcakmak.punkyapp.databinding.FragmentSplashBinding
 import com.yusufcakmak.punkyapp.presentation.base.BaseFragment
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>() {
 
@@ -16,7 +17,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lifecycleScope.launchWhenCreated {
+        lifecycleScope.launch {
             delay(2000)
             findNavController().navigate(R.id.action_navigation_splash_to_navigation_home)
         }
