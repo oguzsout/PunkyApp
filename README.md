@@ -1,5 +1,8 @@
-# PunkyApp
+# Punky
 
+Punky is a cocktail application, you can explore new cocktails and see the ingredients of the cocktail.
+
+This project developing to explore new libs and give them a try.
 
 # IN-PROGRESS
 
