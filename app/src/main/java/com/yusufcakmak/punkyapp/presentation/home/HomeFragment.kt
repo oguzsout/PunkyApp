@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import com.squareup.picasso.Picasso
 import com.yusufcakmak.punkyapp.R
 import com.yusufcakmak.punkyapp.databinding.FragmentHomeBinding
+import com.yusufcakmak.punkyapp.domain.model.Cocktail
 import com.yusufcakmak.punkyapp.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,19 +20,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeData()
+    }
 
-        homeViewModel.fetchBeers()
-
+    private fun observeData() {
         homeViewModel.contents_.observe(viewLifecycleOwner, {
-            Log.v("TEST4", "list " + it[0].name)
-            Picasso.get().load(it[0].imageUrl).into(binding.ivBeerImage)
-            binding.tvBeerName.text = it[0].name
-            binding.tvTagLine.text = it[0].tagline
+            Picasso.get().load(it.drinks[0].strDrinkThumb).into(binding.ivBeerImage)
+            initUI(it.drinks)
         })
+    }
 
-        binding.tvRandomBeer.setOnClickListener {
-            homeViewModel.fetchBeers()
-        }
-
+    private fun initUI(list: List<Cocktail>) {
+        binding.viewState = HomeViewState(list[0])
+        binding.executePendingBindings()
     }
 }

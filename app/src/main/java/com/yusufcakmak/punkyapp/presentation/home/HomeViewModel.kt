@@ -6,8 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yusufcakmak.punkyapp.common.doOnStatusChanged
 import com.yusufcakmak.punkyapp.common.doOnSuccess
-import com.yusufcakmak.punkyapp.domain.model.Beer
-import com.yusufcakmak.punkyapp.domain.usecase.FetchBeerUseCase
+import com.yusufcakmak.punkyapp.domain.model.Cocktail
+import com.yusufcakmak.punkyapp.domain.model.CocktailWrapper
+import com.yusufcakmak.punkyapp.domain.usecase.FetchCocktailUseCase
 import com.yusufcakmak.punkyapp.presentation.base.StatusViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -15,17 +16,20 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val fetchBeerUseCase: FetchBeerUseCase
+    private val fetchBeerUseCase: FetchCocktailUseCase
 ) : ViewModel() {
 
-    private val contents = MutableLiveData<List<Beer>>()
-    val contents_: LiveData<List<Beer>> = contents
+    private val contents = MutableLiveData<CocktailWrapper>()
+    val contents_: LiveData<CocktailWrapper> = contents
 
     private val status = MutableLiveData<StatusViewState>()
     val status_: LiveData<StatusViewState> = status
 
+    init {
+        fetchCocktails()
+    }
 
-    fun fetchBeers() {
+    fun fetchCocktails() {
         fetchBeerUseCase
             .fetchBeers()
             .doOnSuccess { data ->

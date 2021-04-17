@@ -1,9 +1,12 @@
 package com.yusufcakmak.punkyapp.domain.di
 
 import com.yusufcakmak.punkyapp.common.Mapper
-import com.yusufcakmak.punkyapp.data.model.BeerResponse
-import com.yusufcakmak.punkyapp.domain.model.Beer
-import com.yusufcakmak.punkyapp.domain.mapper.BeerDataMapper
+import com.yusufcakmak.punkyapp.data.model.CocktailResponse
+import com.yusufcakmak.punkyapp.data.model.CocktailWrapperResponse
+import com.yusufcakmak.punkyapp.domain.model.Cocktail
+import com.yusufcakmak.punkyapp.domain.mapper.CocktailDataMapper
+import com.yusufcakmak.punkyapp.domain.mapper.CocktailWrapperDataMapper
+import com.yusufcakmak.punkyapp.domain.model.CocktailWrapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +19,15 @@ class DataMapperModule {
 
     @Provides
     @Singleton
-    fun provideBeerMapper(): Mapper<BeerResponse, Beer> {
-        return BeerDataMapper()
+    fun provideCocktailMapper(): Mapper<List<CocktailResponse>, List<Cocktail>> {
+        return CocktailDataMapper()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCocktailWrapperMapper(
+        cocktailDataMapper: CocktailDataMapper
+    ): Mapper<CocktailWrapperResponse, CocktailWrapper> {
+        return CocktailWrapperDataMapper(cocktailDataMapper)
     }
 }

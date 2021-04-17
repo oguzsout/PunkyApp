@@ -2,9 +2,9 @@ package com.yusufcakmak.punkyapp.data.di
 
 import com.yusufcakmak.punkyapp.BuildConfig
 import com.yusufcakmak.punkyapp.data.IoDispatcher
-import com.yusufcakmak.punkyapp.data.remote.RemoteBeerDataSource
-import com.yusufcakmak.punkyapp.data.remote.RemoteDataSourceImpl
-import com.yusufcakmak.punkyapp.data.api.BeerService
+import com.yusufcakmak.punkyapp.data.remote.RemoteCocktailDataSource
+import com.yusufcakmak.punkyapp.data.remote.RemoteCocktailDataSourceImpl
+import com.yusufcakmak.punkyapp.data.api.CoctailService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,7 +51,7 @@ class RemoteDataModule {
 
     @Provides
     @Singleton
-    fun provideBeerServiceInterface(retrofit: Retrofit): BeerService {
+    fun provideBeerServiceInterface(retrofit: Retrofit): CoctailService {
         return retrofit.create()
     }
 
@@ -59,10 +59,10 @@ class RemoteDataModule {
     @Provides
     @Singleton
     fun provideRemotePostsDataSource(
-        api: BeerService,
+        api: CoctailService,
         @IoDispatcher dispatcher: CoroutineDispatcher
-    ): RemoteBeerDataSource {
-        return RemoteDataSourceImpl(api, dispatcher)
+    ): RemoteCocktailDataSource {
+        return RemoteCocktailDataSourceImpl(api, dispatcher)
     }
 
 }
