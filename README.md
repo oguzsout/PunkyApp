@@ -9,7 +9,7 @@ This project developing to explore new libs and give them a try.
 
 <img src="https://github.com/yusufcakmak/PunkyApp/blob/main/resources/app_img.jpg" height="500" width="800"/>
 
-Tech Stack
+## Tech Stack
 * Kotlin
 * Android Architecture Components
 * DataBinding
