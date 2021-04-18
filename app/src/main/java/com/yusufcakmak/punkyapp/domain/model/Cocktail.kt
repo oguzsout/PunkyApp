@@ -6,5 +6,5 @@ data class Cocktail(
     val strCategory: String?,
     val strDrinkThumb: String?,
     val strInstructions: String?,
-    val strIngredients : String?
+    val strIngredients : List<String?>
 )

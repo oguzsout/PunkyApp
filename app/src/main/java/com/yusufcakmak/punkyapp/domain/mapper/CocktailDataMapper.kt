@@ -14,11 +14,21 @@ class CocktailDataMapper @Inject constructor() : Mapper<List<CocktailResponse>, 
     }
 
     private fun convertResponseToModel(response: CocktailResponse): Cocktail {
+        val ingredientList = mutableListOf<String?>()
+        ingredientList.add(response.strIngredient1)
+        ingredientList.add(response.strIngredient2)
+        response.strIngredient3?.let {
+            ingredientList.add(it)
+        }
+        response.strIngredient4?.let {
+            ingredientList.add(it)
+        }
+
         return Cocktail(
             idDrink = response.idDrink,
             strDrink = response.strDrink,
             strCategory = response.strCategory,
-            strIngredients = response.strIngredient1 + " , " + response.strIngredient2 + " , " + response.strIngredient3 + " , " + response.strIngredient4,
+            strIngredients = ingredientList.toList(),
             strDrinkThumb = response.strDrinkThumb,
             strInstructions = response.strInstructions
         )
