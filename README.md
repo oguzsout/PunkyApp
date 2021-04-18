@@ -17,7 +17,7 @@ This project developing to explore new libs and give them a try.
 * Retrofit
 * Coroutines
 
-## API
+# API
 
 Get a random cocktail from API
 
