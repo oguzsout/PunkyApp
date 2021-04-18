@@ -7,4 +7,4 @@ This project developing to explore new libs and give them a try.
 # IN-PROGRESS
 
 
-<img src="https://github.com/yusufcakmak/PunkyApp/blob/main/resources/coctail_home.jpeg" height="400" width="200"/>
+<img src="https://github.com/yusufcakmak/PunkyApp/blob/main/resources/app_img.jpg" height="600" width="400"/>
